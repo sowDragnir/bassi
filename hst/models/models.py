@@ -1,18 +1,14 @@
-# -*- coding: utf-8 -*-
-
-# from odoo import models, fields, api
+from odoo import models, fields, api
 
 
-# class hst(models.Model):
-#     _name = 'hst.hst'
-#     _description = 'hst.hst'
+class hst(models.Model):
+    _inherit = 'res.partner'
 
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100
+
+    nhc_code = fields.Char(string='NHC', readonly=True)
+    dni = fields.Char(string='DNI')
+    nass_code = fields.Char(string='NASS')
+    cip_code = fields.Char(string='CIP')
+    is_pacient = fields.Boolean(default=False)
+    birthday = fields.Date(string='Birthday')
+    other_obs = fields.Char(string='another Observation')
