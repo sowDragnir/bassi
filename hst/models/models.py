@@ -39,18 +39,8 @@ class hst(models.Model):
             }).next_by_code()
             return super()
             
-            # Mostrar los campos adicionales solo si 7777is_pacient es True
-            if is_pacient:
-                # Aquí puedes agregar el código para manejar los campos adicionales
-                # Por ejemplo, puedes asignar valores a campos específicos en vals_list
-                vals_list['campo1'] = 'ValorCampo1'
-                vals_list['campo2'] = 'ValorCampo2'
             
-            # Continúa con la creación del registro usando vals_list
-            # ...
-
-    # def create(self, vals_list):
-    #     if vals_list.get('is_pacient') == True:
-
-    #         if vals_list.get('dni'):
-    #             paccient_with_dni = self.env['res.partner'].search([])
+            if self.is_pacient== True or vals_list('is_pacient'):
+                
+                vals_list['nhc_code'] = vals_list('nhc_code')
+                
