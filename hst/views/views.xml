@@ -5,7 +5,13 @@
     <field name="inherit_id" ref="base.view_partner_form" />
     <field name="arch" type="xml">
       <xpath expr="//field[@name='vat']" position="after">
+        <field name="is_pacient"/>
+        <field name="nhc_code"/>
+        <field name="birthday"/>
         <field name="dni"/>
+        <field name="cip_code"/>
+        <field name="nass_code"/>
+        <field name="other_obs"/>
       
       </xpath>
     </field>
