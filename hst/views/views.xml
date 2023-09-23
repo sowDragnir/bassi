@@ -5,15 +5,24 @@
     <field name="inherit_id" ref="base.view_partner_form" />
     <field name="arch" type="xml">
       <xpath expr="//field[@name='vat']" position="after">
-        <field name="is_pacient"/>
-        <field name="nhc_code"/>
-        <field name="birthday"/>
-        <field name="dni"/>
-        <field name="cip_code"/>
-        <field name="nass_code"/>
-        <field name="other_obs"/>
-      
+        <field name="is_pacient" attrs="{'invisible':[('is_company', '=', True)]}"/>
+        <field name="nhc_code" attrs="{'invisible':[('is_pacient', '=', False)]}"/>
+        <field name="birthday" attrs="{'invisible':[('is_pacient', '=', False)]}"/>
+        <field name="dni" attrs="{'invisible':[('is_pacient', '=', False)]}"/>
+        <field name="cip_code" attrs="{'invisible':[('is_pacient', '=', False)]}"/>
+        <field name="nass_code" attrs="{'invisible':[('is_pacient', '=', False)]}"/>
+        <field name="other_obs" attrs="{'invisible':[('is_pacient', '=', False)]}"/>
       </xpath>
     </field>
   </record>
+
+  <record id="sequence_nhc_code" model="ir.sequence">
+          <field name="name">sequence num</field>
+          <field name="code">res.partner</field>
+          <field name="active">TRUE</field>
+          <field name="prefix">NHC-NUM</field>
+          <field name="padding">3</field>
+          <!-- <field name="numero_nex">1</field>
+          <field name="numero_increment">1</field>-->
+  </record> 
 </odoo>
