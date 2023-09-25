@@ -25,4 +25,6 @@
           <!-- <field name="numero_nex">1</field>
           <field name="numero_increment">1</field>-->
   </record> 
+
+
 </odoo>
