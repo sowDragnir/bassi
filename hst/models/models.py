@@ -31,11 +31,5 @@ class hst(models.Model):
                     return result
 
             
-            # if vals_list.get('cip_code'):
-            #     #cip_code = vals_list.get('cip_code').upper()
-            #     pacient_with_cip_code = self.env['res.partner'].search([('cip_code', '=', vals_list['cip_code']),('cip_code', '=', vals_list['cip_code'].upper())])
-            #     if pacient_with_cip_code:
-            #         raise ValidationError('CIP already exists') 
-            #     else:
-            #         vals_list['cip_code'] = vals_list['cip_code'].upper()
+            
    
